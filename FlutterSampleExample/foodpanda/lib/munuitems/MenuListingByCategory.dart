@@ -74,7 +74,7 @@ class MenuListingByCategory_State extends State<MenuListingByCategory> {
               ],
             ),
               onTap: () {
-              Route route = MaterialPageRoute(builder: (context) => AddtoCardScreen());
+              Route route = MaterialPageRoute(builder: (context) => AddToCardScreen());
               Navigator.push(context, route); ;
 
               }

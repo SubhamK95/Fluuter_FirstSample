@@ -52,26 +52,6 @@ class AddToCardModel {
       item_ingradients: "Personal , Stuffed Crust - Cheese Maxx",
       item_quantity: "3"),
 
-  new AddToCardModel(
-      item_numer_logo:"http://www.thinkpromotional.com.au/images/cssimg/logo_sales-items.png",
-      item_name: "Veg Pizza Hut",
-      item_price: "Rs. 2,330",
-      item_ingradients: "Personal , Stuffed Crust - Cheese Maxx",
-      item_quantity: "3"),
-
-  new AddToCardModel(
-      item_numer_logo:"http://www.thinkpromotional.com.au/images/cssimg/logo_sales-items.png",
-      item_name: "Veg Pizza Hut",
-      item_price: "Rs. 2,330",
-      item_ingradients: "Personal , Stuffed Crust - Cheese Maxx",
-      item_quantity: "3"),
-
-  new AddToCardModel(
-      item_numer_logo:"http://www.thinkpromotional.com.au/images/cssimg/logo_sales-items.png",
-      item_name: "Veg Pizza Hut",
-      item_price: "Rs. 2,330",
-      item_ingradients: "Personal , Stuffed Crust - Cheese Maxx",
-      item_quantity: "3"),
 
 
   ];

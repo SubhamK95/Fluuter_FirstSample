@@ -76,18 +76,9 @@ class WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: new NestedScrollView(
-            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                new SliverAppBar(
-                  pinned: true,
-                  title: new Text('Flutter Demo'),
-                ),
-              ];
-            },
-          body: Column(
+        body: Column(
         children: <Widget>[
-         Padding(
+        Padding(
             padding: EdgeInsets.all(16),
             child: Container(
               child: TextField(
@@ -104,7 +95,11 @@ class WelcomeScreenState extends State<WelcomeScreen> {
         ImageSlider(),
         new Expanded(
             child: GridView.count(
+                primary: false,
                 crossAxisCount: 3,
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                physics: NeverScrollableScrollPhysics(),
                 children: List.generate(choices.length, (index) {
                   return Center(
                     child: ChoiceCard(
@@ -113,7 +108,7 @@ class WelcomeScreenState extends State<WelcomeScreen> {
                   );
                 }))),
       ],
-    )));
+    ));
   }
 
   @override
@@ -189,12 +184,7 @@ const List<Choice> choices = const <Choice>[
   const Choice(title: 'Snacks', icon: Icons.directions_bus),
 ];
 
-
-void ClickonMenuItems(){
-
-
-}
-
+void ClickonMenuItems() {}
 
 class ChoiceCard extends StatelessWidget {
   const ChoiceCard({Key key, this.choice}) : super(key: key);
@@ -205,26 +195,27 @@ class ChoiceCard extends StatelessWidget {
     //final TextStyle textStyle = Theme.of(context).textTheme.display1;
     return Padding(
         padding: EdgeInsets.all(4),
-       child: GestureDetector(
-           onTap:(){
-             Route route = MaterialPageRoute(builder: (context) => MenuListingByCategory());
-              Navigator.push(context, route); ;
-              },
-           child: Card(
-             elevation: 12,
-             color: Colors.white,
-             margin: EdgeInsets.all(2),
-             child: Center(
-               child: Column(
-                   mainAxisSize: MainAxisSize.min,
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                   children: <Widget>[
-                     Icon(choice.icon, size: 40.0, color: Colors.red),
-                     Text(choice.title,
-                         style: TextStyle(fontSize: 12, color: Colors.red)),
-                   ]),
-             ),)
-       )
-    );
+        child: GestureDetector(
+            onTap: () {
+              Route route = MaterialPageRoute(
+                  builder: (context) => MenuListingByCategory());
+              Navigator.push(context, route);
+              ;
+            },
+            child: Card(
+              elevation: 12,
+              color: Colors.white,
+              margin: EdgeInsets.all(2),
+              child: Center(
+                child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(choice.icon, size: 40.0, color: Colors.red),
+                      Text(choice.title,
+                          style: TextStyle(fontSize: 12, color: Colors.red)),
+                    ]),
+              ),
+            )));
   }
 }

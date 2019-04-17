@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodpanda/model/AddToCardModel.dart';
-
-class AddtoCardScreen extends StatefulWidget {
+class AddToCardScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -10,7 +8,7 @@ class AddtoCardScreen extends StatefulWidget {
 }
 
 // ignore: camel_case_types
-class AddToCard_State extends State<AddtoCardScreen> {
+class AddToCard_State extends State<AddToCardScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,10 +16,14 @@ class AddToCard_State extends State<AddtoCardScreen> {
       home: Scaffold(
           body: Container(
               child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          BackButton(),
           Container(
-            margin: EdgeInsets.all(12),
+            margin: EdgeInsets.fromLTRB(28, 12, 0, 0),
+         child:BackButton()
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(18, 16, 0, 0),
             child: Text(
               "Pizza Hut(Sector 40 C)",
               style: TextStyle(
@@ -30,32 +32,18 @@ class AddToCard_State extends State<AddtoCardScreen> {
                   color: Colors.black),
             ),
           ),
-          Text(
-            "3 items , Rs. 3000",
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 12,
-            ),
-          ),
 
-          Text("dsfsdfdsf")
-
-          /*  ListView.builder(
-            padding: const EdgeInsets.all(12.0),
-              itemCount: addCardList.length,
-              itemBuilder: (context, i) => new Row(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(left: 12),
-                      child: Image.network(
-                        addCardList[i].item_numer_logo,
-                        height: 16,
-                        width: 16,
-                      ),
-                    )
-                  ],
+          Container(
+              margin: EdgeInsets.fromLTRB(24, 8, 0, 0),
+              child:Text(
+                "3 items ,  "+"\u20B9"+" 3000",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 14,
                 ),
-          )*/
+              )
+          ),
+          _getCardsItems(context)
 
           /* ListView.builder(
             padding: const EdgeInsets.all(12.0),
@@ -113,24 +101,21 @@ class AddToCard_State extends State<AddtoCardScreen> {
   }
 }
 
-Widget _getCardsItems() {
-  return new ListView.builder(
-    padding: const EdgeInsets.all(10.0),
-    itemBuilder: (context, i) {
-      Container(
-        child: Text("sdgfdfgfghfgh"),
-      );
+Widget _getCardsItems(BuildContext context) {
+ Scaffold(
+   body:ListView.builder(
+   itemCount: 34,
 
-    },
-  );
+
+   )
+
+ );
 }
 
 class BackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    alignment:
-    MainAxisAlignment.start;
-    AssetImage assetImage = new AssetImage("assets/backbutton.png");
+    AssetImage assetImage = new AssetImage("images/backbutton.png");
     Image image = new Image(
       image: assetImage,
       color: Colors.red,
