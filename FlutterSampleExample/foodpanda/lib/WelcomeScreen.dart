@@ -76,7 +76,10 @@ class WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
+      body:new IconTheme(
+    data: new IconThemeData(
+    color: Colors.red),
+    child: new Column(
         children: <Widget>[
         Padding(
             padding: EdgeInsets.all(16),
@@ -87,9 +90,9 @@ class WelcomeScreenState extends State<WelcomeScreen> {
                     hintText: 'Search Food',
                     prefixIcon: Icon(Icons.search),
                     suffix: Icon(Icons.filter),
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                    contentPadding: EdgeInsets.fromLTRB(6.0, 0, 24.0, 0),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(22.0)),
+                        borderRadius: BorderRadius.circular(39.0)),
                   )),
             )),
         ImageSlider(),
@@ -108,7 +111,7 @@ class WelcomeScreenState extends State<WelcomeScreen> {
                   );
                 }))),
       ],
-    ));
+    )));
   }
 
   @override
@@ -129,7 +132,7 @@ class ImageSlider extends StatelessWidget {
       viewportFraction: 0.9,
       aspectRatio: 2.0,
       autoPlay: true,
-      enlargeCenterPage: true,
+      enlargeCenterPage: false,
       items: imgList.map(
         (url) {
           return Container(

@@ -62,27 +62,4 @@ List<MenuListingModel> dummyData = [
       price: "Rs. 255",
       reached_time: "30 min"),
 
-  new MenuListingModel(
-      recipe_img:
-      "https://images-gmi-pmc.edge-generalmills.com/a6798474-bb7f-4edf-a425-fccd4d5cd361.jpg",
-      recipe_name: "Pizza Hut",
-      shot_description: "Snacks , hot yummy pizza",
-      price: "Rs. 255",
-      reached_time: "30 min"),
-
-  new MenuListingModel(
-      recipe_img:
-      "https://images-gmi-pmc.edge-generalmills.com/a6798474-bb7f-4edf-a425-fccd4d5cd361.jpg",
-      recipe_name: "Pizza Hut",
-      shot_description: "Snacks , hot yummy pizza",
-      price: "Rs. 255",
-      reached_time: "30 min"),
-
-  new MenuListingModel(
-      recipe_img:
-      "https://images-gmi-pmc.edge-generalmills.com/a6798474-bb7f-4edf-a425-fccd4d5cd361.jpg",
-      recipe_name: "Pizza Hut",
-      shot_description: "Snacks , hot yummy pizza",
-      price: "Rs. 255",
-      reached_time: "30 min"),
 ];

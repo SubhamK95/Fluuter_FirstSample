@@ -32,7 +32,6 @@ class HomeScreen extends StatefulWidget {
 
 class HomePageState extends State<HomeScreen> {
   int _selectedDrawerIndex = 0;
-  int _currentindex = 0;
 
   _getDrawerItemWidget(int pos) {
     switch (pos) {
@@ -88,6 +87,7 @@ class HomePageState extends State<HomeScreen> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.drawerItems[_selectedDrawerIndex].title),
+        backgroundColor: Colors.red,
         elevation: defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
 
       ),
