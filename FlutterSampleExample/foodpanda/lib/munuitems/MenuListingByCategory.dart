@@ -22,7 +22,6 @@ class MenuListingByCategory_State extends State<MenuListingByCategory> {
         appBar: AppBar(title: Text("Pizzas", textAlign: TextAlign.start)),
         body: Container(
             child: ListView.builder(
-          padding: const EdgeInsets.all(12.0),
           itemCount: dummyData.length,
           itemBuilder: (context, i) =>
           new GestureDetector(
@@ -71,6 +70,17 @@ class MenuListingByCategory_State extends State<MenuListingByCategory> {
                     )
                   ],
                 ),
+
+                Padding(
+                  padding:EdgeInsets.only(top: 24) ,
+                    child:Divider(
+                      color: Colors.green
+                )
+
+                )
+
+
+
               ],
             ),
               onTap: () {

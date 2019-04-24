@@ -15,6 +15,9 @@ class DrawerItem {
 
 class HomeScreen extends StatefulWidget {
 
+  static String tag = 'home-page';
+
+
   final drawerItems = [
     new DrawerItem("Home", Icons.home),
     new DrawerItem("My Order", Icons.bookmark_border),

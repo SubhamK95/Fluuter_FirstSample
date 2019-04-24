@@ -79,39 +79,55 @@ class WelcomeScreenState extends State<WelcomeScreen> {
       body:new IconTheme(
     data: new IconThemeData(
     color: Colors.red),
-    child: new Column(
-        children: <Widget>[
-        Padding(
-            padding: EdgeInsets.all(16),
-            child: Container(
-              child: TextField(
-                  controller: searchController,
-                  decoration: InputDecoration(
-                    hintText: 'Search Food',
-                    prefixIcon: Icon(Icons.search),
-                    suffix: Icon(Icons.filter),
-                    contentPadding: EdgeInsets.fromLTRB(6.0, 0, 24.0, 0),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(39.0)),
-                  )),
-            )),
-        ImageSlider(),
-        new Expanded(
-            child: GridView.count(
-                primary: false,
-                crossAxisCount: 3,
-                shrinkWrap: true,
-                scrollDirection: Axis.vertical,
-                physics: NeverScrollableScrollPhysics(),
-                children: List.generate(choices.length, (index) {
-                  return Center(
-                    child: ChoiceCard(
-                      choice: choices[index],
-                    ),
-                  );
-                }))),
-      ],
-    )));
+    child:Container(
+        child: new Column(
+              children: <Widget>[
+                Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Container(
+                      child: TextField(
+                          controller: searchController,
+                          decoration: InputDecoration(
+                            hintText: 'Search Food',
+                            prefixIcon: Icon(Icons.search),
+                            suffix: Icon(Icons.filter),
+                            contentPadding: EdgeInsets.fromLTRB(6.0, 0, 24.0, 0),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(39.0)),
+                          )),
+                    )),
+                ImageSlider(),
+                new Expanded(
+                    child: SingleChildScrollView(
+                        child: GridView.count(
+                          primary: false,
+                          crossAxisCount: 3,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          physics: NeverScrollableScrollPhysics(),
+                          children: List.generate(choices.length, (index) {
+                            return Center(
+                              child: ChoiceCard(
+                                choice: choices[index],
+                              ),
+                            );
+                          }))
+
+                  )
+
+
+
+
+                ),
+              ],
+            )
+
+
+    )
+
+
+
+      ));
   }
 
   @override

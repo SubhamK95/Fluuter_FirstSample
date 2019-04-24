@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:foodpanda/DrawerItems.dart';
 import 'package:foodpanda/WelcomeScreen.dart';
+import 'package:foodpanda/login/LoginScreen.dart';
+import 'package:foodpanda/login/LoginScreenDemo.dart';
 
 class SplashScreen extends StatefulWidget{
 
@@ -19,7 +21,7 @@ class _SplashState extends State<SplashScreen>{
   void initState() {
     Timer(
         Duration(seconds: 3), () {
-      Route route = MaterialPageRoute(builder: (context) => HomeScreen());
+      Route route = MaterialPageRoute(builder: (context) => LoginScreenDemo());
       Navigator.pushReplacement(context, route);
     }
     );
